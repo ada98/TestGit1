@@ -34,7 +34,7 @@ public class UserServlet extends BaseServlet {
 		System.out.println(1111);
 		if(flag!=null){
 			session.setAttribute("user", flag);
-			resp.sendRedirect("manager/main.jsp");//要修改
+			resp.sendRedirect("main.jsp");//要修改
 		}else{
 			resp.sendRedirect("index.jsp");
 		}
