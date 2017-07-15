@@ -26,4 +26,17 @@ public class UserDaoImpl implements UserDao {
 		return null;
 	}
 
+	@Override
+	public List<User> findAll() {
+		SqlSession session=null;
+		try {
+			session=MyBatisHelper.getSession();
+			List<User> list=session.selectList(User.class.getName()+".selectAll" );
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }
